@@ -62,26 +62,16 @@ OpenCV:
 [https://docs.opencv.org/master/d0/d3d/tutorial_general_install.html](https://docs.opencv.org/master/d0/d3d/tutorial_general_install.html)
 
 ```shell script
+mkdir OpenCV
+cd OpenCV
 git clone https://github.com/opencv/opencv
 git -C opencv checkout 4.5.1
 git clone https://github.com/opencv/opencv_contrib
 git -C opencv_contrib checkout 4.5.1
-git clone https://github.com/opencv/opencv_extra
-git -C opencv_extra checkout 4.5.1
-cmake ..
-make -j4
-sudo make install
-```
-
-
-OpenCV:
-```
-git clone https://github.com/opencv/opencv
-cd opencv
 mkdir build
 cd build
-cmake ..
-make -j 32
+cmake -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib/modules ../opencv
+make -j4
 sudo make install
 ```
 
