@@ -5,12 +5,7 @@ https://github.com/UZ-SLAMLab/ORB_SLAM3
 This fork is itself a fork of:
 https://github.com/shanpenghui/ORB_SLAM3_Fixed
 
-Reference article 参考文章：
->EVO Evaluation of SLAM 4 --- ORB-SLAM3 编译和利用数据集运行
->https://blog.csdn.net/shanpenghui/article/details/
-
->EVO Evaluation of SLAM 5 --- ORB-SLAM3 精度和性能效果评估
->https://blog.csdn.net/shanpenghui/article/details/109361766
+Optimized for running on Ubuntu 18.04 Bionic with ROS Melodic.
 
 ## Update to V1.0
 
@@ -30,17 +25,11 @@ This software is based on [ORB-SLAM2](https://github.com/raulmur/ORB_SLAM2) deve
 <a href="https://youtu.be/HyLNq-98LRo" target="_blank"><img src="https://img.youtube.com/vi/HyLNq-98LRo/0.jpg"
 alt="ORB-SLAM3" width="240" height="180" border="10" /></a>
 
-## Add instructions for running with your own T265 camera / 新增实际用T265相机运行的说明
-
-## 新增了MLPnP算法的详细注释
-
-## 新增了RGBD运行shell
-
 ## 1、Install Third Party
 
 Pangolin:
 ```shell script
-git clone https://github.com/stevenlovegrove/Pangolin.git
+git clone https://github.com/stevenlovegrove/Pangolin.git -b v0.6
 sudo apt install libglew-dev
 cd Pangolin && mkdir build && cd build
 cmake ..
