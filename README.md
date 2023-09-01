@@ -109,31 +109,6 @@ cd ORB_SLAM3_Fixed
 rosrun ORB_SLAM3 Mono Vocabulary/ORBvoc.txt Examples/Monocular-Inertial/TUM_512.yaml
 ```
 
-But!!!! You can`t run ORB-SLAM3 without run the camera_node!!!!
-So, if you want to test ros-version, just use your computer camera(wish you have)
-
-```shell script
-git clone https://github.com/bosch-ros-pkg/usb_cam.git
-```
-Build and launch it, so you can see the /usb_cam/image_raw in rostopic.
-But, that is not enough!!!!!
-You should change the rostopic name in ORB-SLAM3, which is in Line 62, ros_mono.cc
-```C++
-ros::Subscriber sub = nodeHandler.subscribe("/usb_cam/image_raw", 1, &ImageGrabber::GrabImage,&igb);
-```
-
-After the steps up, it work finally!
-
-#### Problem with using own camera
-When I first run it, error come out:
-```C++
-Failed to load module "canberra-gtk-module"
-```
-To solve this problem, install the module:
-```shell script
-sudo apt-get install libcanberra-gtk-module
-```
-
 ## 7、Run ORB-SLAM3 with Intel Realsense T265(ros1-noetic)
 
 Make sure docker is installed please !!!
