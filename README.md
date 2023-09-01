@@ -86,8 +86,6 @@ Before running, you should change the path in tum_vi.sh where you save the datas
 pathDatasetTUM_VI='/home/sph/Downloads' #Example, it is necesary to change it by the dataset path
 ```
 
-**Remember to unzip the ORBvoc.txt.tar.gz into Vocabulary folder!!!**
-
 Work in shells path
 ```shell script
 cd shells
