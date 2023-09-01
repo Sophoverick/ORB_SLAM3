@@ -2,7 +2,7 @@
 The original repository is here:
 https://github.com/UZ-SLAMLab/ORB_SLAM3
 
-This fork is itself a fork of:
+This fork is a fork of fork:
 https://github.com/shanpenghui/ORB_SLAM3_Fixed
 
 Optimized for running on Ubuntu 18.04 Bionic with ROS Melodic.
