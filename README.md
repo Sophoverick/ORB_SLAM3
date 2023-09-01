@@ -36,16 +36,6 @@ cd cmake-3.20.1
 make
 make install
 ```
-Pangolin:
-```shell script
-git clone https://github.com/stevenlovegrove/Pangolin.git -b v0.6
-sudo apt install libglew-dev
-cd Pangolin && mkdir build && cd build
-cmake ..
-make -j 32
-sudo make install
-```
-
 Googlelog:
 ```shell script
 git clone https://github.com/google/glog
@@ -54,22 +44,6 @@ cmake -H. -Bbuild -G "Unix Makefiles"
 cmake --build build
 cmake --build build --target test
 cd build
-sudo make install
-```
-OpenCV:
-[https://docs.opencv.org/master/d0/d3d/tutorial_general_install.html](https://docs.opencv.org/master/d0/d3d/tutorial_general_install.html)
-
-```shell script
-mkdir OpenCV
-cd OpenCV
-git clone https://github.com/opencv/opencv
-git -C opencv checkout 4.5.1
-git clone https://github.com/opencv/opencv_contrib
-git -C opencv_contrib checkout 4.5.1
-mkdir build
-cd build
-cmake -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib/modules ../opencv
-make -j4
 sudo make install
 ```
 
@@ -377,12 +351,36 @@ We use the new thread and chrono functionalities of C++11.
 ## Pangolin
 We use [Pangolin](https://github.com/stevenlovegrove/Pangolin) for visualization and user interface. Dowload and install instructions can be found at: https://github.com/stevenlovegrove/Pangolin.
 
+```shell script
+git clone https://github.com/stevenlovegrove/Pangolin.git -b v0.6
+sudo apt install libglew-dev
+cd Pangolin && mkdir build && cd build
+cmake ..
+make -j 32
+sudo make install
+```
+
 ## OpenCV
 We use [OpenCV](http://opencv.org) to manipulate images and features. Dowload and install instructions can be found at: http://opencv.org. **Required at leat 3.0. Tested with OpenCV 3.2.0 and 4.4.0**.
 
+```shell script
+mkdir OpenCV
+cd OpenCV
+git clone https://github.com/opencv/opencv
+git -C opencv checkout 4.5.1
+git clone https://github.com/opencv/opencv_contrib
+git -C opencv_contrib checkout 4.5.1
+mkdir build
+cd build
+cmake -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib/modules ../opencv
+make -j4
+sudo make install
+```
 ## Eigen3
 Required by g2o (see below). Download and install instructions can be found at: http://eigen.tuxfamily.org. **Required at least 3.1.0**.
-
+```shell script
+sudo apt-get install libeigen3-dev
+```
 ## DBoW2 and g2o (Included in Thirdparty folder)
 We use modified versions of the [DBoW2](https://github.com/dorian3d/DBoW2) library to perform place recognition and [g2o](https://github.com/RainerKuemmerle/g2o) library to perform non-linear optimizations. Both modified libraries (which are BSD) are included in the *Thirdparty* folder.
 
