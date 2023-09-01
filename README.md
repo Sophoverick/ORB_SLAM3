@@ -501,14 +501,14 @@ Execute the following script to process sequences and compute the RMS ATE:
 ### Building the nodes for mono, mono-inertial, stereo, stereo-inertial and RGB-D
 Tested with ROS Melodic and ubuntu 18.04.
 
-1. Add the path including *Examples/ROS/ORB_SLAM3* to the ROS_PACKAGE_PATH environment variable. Open .bashrc file:
+1. Add the path including *Examples_old/ROS/ORB_SLAM3* to the ROS_PACKAGE_PATH environment variable. Open .bashrc file:
   ```
   gedit ~/.bashrc
   ```
 and add at the end the following line. Replace PATH by the folder where you cloned ORB_SLAM3:
 
   ```
-  export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:PATH/ORB_SLAM3/Examples/ROS
+  export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:PATH/ORB_SLAM3/Examples_old/ROS
   ```
 
 2. Execute `build_ros.sh` script:
