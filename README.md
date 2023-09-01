@@ -27,6 +27,15 @@ alt="ORB-SLAM3" width="240" height="180" border="10" /></a>
 
 ## 1、Install Third Party
 
+CMake(Required 3.16 or above for Googlelog,):
+```shell script
+wget http://www.cmake.org/files/v3.20/cmake-3.20.1.tar.gz
+tar xzf cmake-3.20.1.tar.gz
+cd cmake-3.20.1
+./bootstrap
+make
+make install
+```
 Pangolin:
 ```shell script
 git clone https://github.com/stevenlovegrove/Pangolin.git -b v0.6
@@ -63,10 +72,6 @@ cmake -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib/modules ../opencv
 make -j4
 sudo make install
 ```
-
-ippicv_2020_lnx_intel64_20191018_general.tgz 下载地址：
-链接: https://pan.baidu.com/s/1XwhaDnTaCxAIpmZCRijYvg
-提取码: rq4r
 
 ## 2、Build ORB-SLAM3:
 Work in shells path, continue the operation upon:
@@ -106,37 +111,6 @@ cd ORB_SLAM3_Fixed
 rosrun ORB_SLAM3 Mono Vocabulary/ORBvoc.txt Examples/Monocular-Inertial/TUM_512.yaml
 ```
 
-## 5、Attention:
-
-### 1. Update setting with your own PC.
-
-目前只有单目带IMU的被激活,里面的配置需要对应自己的电脑更新
-
-### 2. Old version bug might be fixed.
-
-原版出现的错误(因为本工程是在ORB3刚开放的时候就建立了，所以有些问题应该被作者修复了，如果有遗漏或冗余请读者自行忽略)
-
-原版ros的编译会出现ORBSLAM2的错误
-```C++
-error: ‘ORB_SLAM2’ has not been declared
-     ImageGrabber(ORB_SLAM2::System* pSLAM):mpSLAM(pSLAM){}
-```
-
-需要用指令修复：
-```shell script
-sed -i "s/ORB_SLAM2/ORB_SLAM3/g" `grep -rl "ORB_SLAM2"`
-```
-
-原版ros的编译也有可能出现找不到文件的错误:
-```C++
-fatal error: GeometricCamera.h: No such file or directory #include "GeometricCamera.h"
-```
-需要在CMakeList添加文件路径:
-```shell script
-${PROJECT_SOURCE_DIR}/../../../include/CameraModels
-```
-
-## 6、Use usb_cam to run camera_node
 But!!!! You can`t run ORB-SLAM3 without run the camera_node!!!!
 So, if you want to test ros-version, just use your computer camera(wish you have)
 
