@@ -1,13 +1,13 @@
 # ORB-SLAM3
-The raw address:
+The original repository is here:
 https://github.com/UZ-SLAMLab/ORB_SLAM3
 
-Copy:
-git config --global core.protectNTFS false && git clone https://github.com/shanpenghui/ORB_SLAM3_Fixed
+This fork is itself a fork of:
+https://github.com/shanpenghui/ORB_SLAM3_Fixed
 
 Reference article 参考文章：
 >EVO Evaluation of SLAM 4 --- ORB-SLAM3 编译和利用数据集运行
->https://blog.csdn.net/shanpenghui/article/details/109354918
+>https://blog.csdn.net/shanpenghui/article/details/
 
 >EVO Evaluation of SLAM 5 --- ORB-SLAM3 精度和性能效果评估
 >https://blog.csdn.net/shanpenghui/article/details/109361766
